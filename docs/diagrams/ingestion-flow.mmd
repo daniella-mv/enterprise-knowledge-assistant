@@ -1,0 +1,25 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant FE as Frontend
+    participant API as FastAPI
+    participant DB as Postgres
+    participant S3 as MinIO/S3
+    participant Embed as Embedding<br/>(local or Bedrock)
+
+    User->>FE: choose file
+    FE->>API: POST /api/documents (multipart)
+    API->>DB: INSERT documents (status=pending)
+    API->>S3: put_object(storage_key, bytes)
+    API->>DB: UPDATE documents SET status=processing
+
+    API->>API: parse → list[ParsedPage]
+    API->>API: chunk → list[Chunk] (800 tokens, 100 overlap)
+
+    API->>Embed: embed_batch(texts)
+    Embed-->>API: list[1024-dim vectors]
+
+    API->>DB: bulk INSERT chunks (text, page, embedding)
+    API->>DB: UPDATE documents SET status=indexed,<br/>chunk_count=N, indexed_at=NOW()
+    API-->>FE: 201 Created (Document JSON)
+    FE-->>User: "indexed · N chunks"

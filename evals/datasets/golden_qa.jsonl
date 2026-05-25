@@ -1,0 +1,20 @@
+{"id": "pto-days", "question": "How many PTO days do full-time employees get per year?", "expected_keywords": ["15", "fifteen"], "expected_source": "employee_handbook.md", "expected_to_abstain": false}
+{"id": "pto-carryover", "question": "What is the maximum number of unused PTO days that can be carried over to the next year?", "expected_keywords": ["5", "five"], "expected_source": "employee_handbook.md", "expected_to_abstain": false}
+{"id": "sick-days", "question": "How many sick days are employees entitled to?", "expected_keywords": ["10", "ten"], "expected_source": "employee_handbook.md", "expected_to_abstain": false}
+{"id": "parental-leave", "question": "How long is the paid parental leave?", "expected_keywords": ["12", "twelve", "weeks"], "expected_source": "employee_handbook.md", "expected_to_abstain": false}
+{"id": "remote-days", "question": "How many days per week can employees work remotely?", "expected_keywords": ["3", "three"], "expected_source": "employee_handbook.md", "expected_to_abstain": false}
+{"id": "bereavement-days", "question": "How many bereavement leave days are provided?", "expected_keywords": ["5", "five"], "expected_source": "employee_handbook.md", "expected_to_abstain": false}
+{"id": "password-length", "question": "What is the minimum password length?", "expected_keywords": ["12", "twelve"], "expected_source": "it_security_policy.md", "expected_to_abstain": false}
+{"id": "password-rotation", "question": "How often must passwords be rotated?", "expected_keywords": ["90", "ninety", "days"], "expected_source": "it_security_policy.md", "expected_to_abstain": false}
+{"id": "mfa-required", "question": "Is multi-factor authentication required for production systems?", "expected_keywords": ["required", "yes"], "expected_source": "it_security_policy.md", "expected_to_abstain": false}
+{"id": "vpn-client", "question": "Which VPN client is approved for remote access?", "expected_keywords": ["Cisco", "AnyConnect"], "expected_source": "it_security_policy.md", "expected_to_abstain": false}
+{"id": "incident-report-window", "question": "How quickly must a suspected security incident be reported?", "expected_keywords": ["1", "one", "hour"], "expected_source": "it_security_policy.md", "expected_to_abstain": false}
+{"id": "data-classification-levels", "question": "What are the data classification levels?", "expected_keywords": ["public", "internal", "confidential", "restricted"], "expected_source": "it_security_policy.md", "expected_to_abstain": false}
+{"id": "sev1-response", "question": "What is the initial response time target for a Severity 1 ticket?", "expected_keywords": ["15", "fifteen", "minute"], "expected_source": "helpdesk_sop.md", "expected_to_abstain": false}
+{"id": "sev2-resolution", "question": "What is the resolution target for a Severity 2 ticket?", "expected_keywords": ["1", "one", "business", "day"], "expected_source": "helpdesk_sop.md", "expected_to_abstain": false}
+{"id": "ticket-lifecycle-stages", "question": "What stages does a ticket move through during its lifecycle?", "expected_keywords": ["triaged", "progress", "resolved", "closed"], "expected_source": "helpdesk_sop.md", "expected_to_abstain": false}
+{"id": "abstain-ceo-salary", "question": "What is the CEO's annual salary?", "expected_keywords": [], "expected_source": null, "expected_to_abstain": true}
+{"id": "abstain-holiday-party", "question": "When is this year's company holiday party?", "expected_keywords": [], "expected_source": null, "expected_to_abstain": true}
+{"id": "abstain-wifi-password", "question": "What is the office Wi-Fi password?", "expected_keywords": [], "expected_source": null, "expected_to_abstain": true}
+{"id": "abstain-marketing-head", "question": "Who is the head of marketing?", "expected_keywords": [], "expected_source": null, "expected_to_abstain": true}
+{"id": "abstain-stock-ticker", "question": "What is the company's stock ticker symbol?", "expected_keywords": [], "expected_source": null, "expected_to_abstain": true}

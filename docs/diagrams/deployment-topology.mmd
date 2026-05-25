@@ -1,0 +1,55 @@
+graph TB
+    User[User Browser]
+
+    subgraph CDN["AWS Edge"]
+      CF[CloudFront]
+      WAF[AWS WAF]
+    end
+
+    subgraph Static["Static Hosting"]
+      S3SPA[(S3 — SPA Bundle)]
+    end
+
+    subgraph API["API Tier"]
+      APIGW[API Gateway HTTP API]
+      Lambda[Lambda<br/>FastAPI handler]
+      Cog[Cognito User Pool]
+    end
+
+    subgraph Async["Async Ingestion"]
+      S3Docs[(S3 — raw docs)]
+      SQS[SQS]
+      Worker[Lambda<br/>ingestion worker]
+    end
+
+    subgraph Persistence
+      RDS[(RDS Postgres<br/>+ pgvector)]
+    end
+
+    subgraph AIServices["Managed AI"]
+      Bedrock[Amazon Bedrock<br/>Claude + Titan]
+    end
+
+    subgraph Observability
+      CW[CloudWatch Logs/Metrics]
+      XRay[AWS X-Ray]
+    end
+
+    User --> WAF --> CF
+    CF --> S3SPA
+    CF --> APIGW
+    APIGW -- JWT --> Cog
+    APIGW --> Lambda
+    Lambda --> RDS
+    Lambda --> Bedrock
+    Lambda --> S3Docs
+
+    S3Docs -- ObjectCreated --> SQS
+    SQS --> Worker
+    Worker --> RDS
+    Worker --> Bedrock
+    Worker --> S3Docs
+
+    Lambda --> CW
+    Worker --> CW
+    Lambda --> XRay

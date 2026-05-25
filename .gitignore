@@ -1,0 +1,69 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+.parcel-cache/
+.next/
+.turbo/
+
+# Build outputs
+frontend/dist/
+backend/dist/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local data
+local_data/
+uploads/
+sample_uploads/
+*.sqlite
+*.sqlite3
+
+# Terraform
+infra/terraform/.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+crash.log
+
+# AWS / SAM
+.aws-sam/
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini

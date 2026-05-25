@@ -1,0 +1,370 @@
+{
+  "total": 20,
+  "answer_questions": 15,
+  "abstain_questions": 5,
+  "answered_rate": 1.0,
+  "cited_anything_rate": 1.0,
+  "cited_expected_source_rate": 1.0,
+  "avg_keyword_recall": 0.9777777777777777,
+  "abstain_precision": 1.0,
+  "p50_latency_ms": 1245,
+  "p95_latency_ms": 2014,
+  "by_question": [
+    {
+      "id": "pto-days",
+      "question": "How many PTO days do full-time employees get per year?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1843,
+      "answer": "Full-time employees are entitled to fifteen (15) days of paid time off per calendar year [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "employee_handbook.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "pto-carryover",
+      "question": "What is the maximum number of unused PTO days that can be carried over to the next year?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1245,
+      "answer": "The maximum number of unused PTO days that can be carried over to the next year is five (5) days [c_0]. Any balance above that cap is forfeited on January 1st.",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "employee_handbook.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "sick-days",
+      "question": "How many sick days are employees entitled to?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1148,
+      "answer": "Employees receive ten (10) days of paid sick leave per year [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "employee_handbook.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "parental-leave",
+      "question": "How long is the paid parental leave?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 2236,
+      "answer": "Eligible employees are entitled to twelve (12) weeks of fully paid parental leave following the birth or adoption of a child [c_0]. Eligibility begins after ninety (90) days of employment [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "employee_handbook.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "remote-days",
+      "question": "How many days per week can employees work remotely?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1536,
+      "answer": "Employees may work remotely up to three (3) days per week with manager approval [c_0]. Fully remote arrangements require additional approval from the department head and HR [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "employee_handbook.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "bereavement-days",
+      "question": "How many bereavement leave days are provided?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1526,
+      "answer": "Employees are entitled to five (5) days of paid bereavement leave in the event of the death of an immediate family member [c_0]. Extended bereavement leave may be requested through HR [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "employee_handbook.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "password-length",
+      "question": "What is the minimum password length?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1052,
+      "answer": "The minimum password length is twelve (12) characters [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "password-rotation",
+      "question": "How often must passwords be rotated?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1044,
+      "answer": "Passwords must be rotated every ninety (90) days [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "mfa-required",
+      "question": "Is multi-factor authentication required for production systems?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1386,
+      "answer": "Yes, multi-factor authentication (MFA) is required for all access to production systems [c_0]. Authenticator apps such as Google Authenticator or Duo are required; SMS-based MFA is no longer accepted [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "vpn-client",
+      "question": "Which VPN client is approved for remote access?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1176,
+      "answer": "The approved VPN client for remote access is Cisco AnyConnect [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "incident-report-window",
+      "question": "How quickly must a suspected security incident be reported?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1274,
+      "answer": "Suspected security incidents must be reported to security@company.com within one (1) hour of discovery. After-hours incidents should also be escalated by phone to the on-call security engineer. [c_0]",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "data-classification-levels",
+      "question": "What are the data classification levels?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1611,
+      "answer": "According to the Information Security Policy, company data is classified into four levels [c_0]:- **Public** \u2014 may be freely shared (e.g., marketing materials)- **Internal** \u2014 for employees only (e.g., org charts)- **Confidential** \u2014 restricted to authorized employees (e.g., contracts)- **Restricted** \u2014 strictly controlled (e.g., customer PII, source code)",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "sev1-response",
+      "question": "What is the initial response time target for a Severity 1 ticket?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 0.667,
+      "latency_ms": 1068,
+      "answer": "The initial response time target for a Severity 1 ticket is 15 minutes [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "helpdesk_sop.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "sev2-resolution",
+      "question": "What is the resolution target for a Severity 2 ticket?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 1108,
+      "answer": "The resolution target for a Severity 2 ticket is one (1) business day [c_0].",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "helpdesk_sop.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "ticket-lifecycle-stages",
+      "question": "What stages does a ticket move through during its lifecycle?",
+      "expected_to_abstain": false,
+      "abstained": false,
+      "abstained_correctly": false,
+      "cited_anything": true,
+      "cited_expected_source": true,
+      "keyword_recall": 1.0,
+      "latency_ms": 2014,
+      "answer": "According to the IT Helpdesk Standard Operating Procedure, tickets move through six stages during their lifecycle [c_0]:1. **New** \u2014 submitted by user, awaiting triage2. **Triaged** \u2014 assigned a severity and owner3. **In progress** \u2014 actively being worked on4. **Pending user** \u2014 awaiting information or confirmation from requester5. **Resolved** \u2014 fix applied, awaiting user confirmation6. **Closed** \u2014 confirmed resolved",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "helpdesk_sop.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "abstain-ceo-salary",
+      "question": "What is the CEO's annual salary?",
+      "expected_to_abstain": true,
+      "abstained": true,
+      "abstained_correctly": true,
+      "cited_anything": false,
+      "cited_expected_source": false,
+      "keyword_recall": 0.0,
+      "latency_ms": 1050,
+      "answer": "I don't have enough information in the indexed documents to answer that.",
+      "citations": []
+    },
+    {
+      "id": "abstain-holiday-party",
+      "question": "When is this year's company holiday party?",
+      "expected_to_abstain": true,
+      "abstained": true,
+      "abstained_correctly": true,
+      "cited_anything": false,
+      "cited_expected_source": false,
+      "keyword_recall": 0.0,
+      "latency_ms": 1073,
+      "answer": "I don't have enough information in the indexed documents to answer that.",
+      "citations": []
+    },
+    {
+      "id": "abstain-wifi-password",
+      "question": "What is the office Wi-Fi password?",
+      "expected_to_abstain": true,
+      "abstained": true,
+      "abstained_correctly": true,
+      "cited_anything": true,
+      "cited_expected_source": false,
+      "keyword_recall": 0.0,
+      "latency_ms": 1682,
+      "answer": "I don't have enough information in the indexed documents to answer that.The security policy [c_0] discusses password requirements for employee accounts and prohibits connecting to corporate systems from public Wi-Fi without a VPN, but it does not contain the office Wi-Fi password.",
+      "citations": [
+        {
+          "short_id": "c_0",
+          "document_filename": "it_security_policy.md",
+          "page": 1
+        }
+      ]
+    },
+    {
+      "id": "abstain-marketing-head",
+      "question": "Who is the head of marketing?",
+      "expected_to_abstain": true,
+      "abstained": true,
+      "abstained_correctly": true,
+      "cited_anything": false,
+      "cited_expected_source": false,
+      "keyword_recall": 0.0,
+      "latency_ms": 1109,
+      "answer": "I don't have enough information in the indexed documents to answer that.",
+      "citations": []
+    },
+    {
+      "id": "abstain-stock-ticker",
+      "question": "What is the company's stock ticker symbol?",
+      "expected_to_abstain": true,
+      "abstained": true,
+      "abstained_correctly": true,
+      "cited_anything": false,
+      "cited_expected_source": false,
+      "keyword_recall": 0.0,
+      "latency_ms": 1151,
+      "answer": "I don't have enough information in the indexed documents to answer that.",
+      "citations": []
+    }
+  ]
+}

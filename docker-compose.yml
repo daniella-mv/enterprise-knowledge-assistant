@@ -1,0 +1,99 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: eka-db
+    environment:
+      POSTGRES_USER: eka
+      POSTGRES_PASSWORD: eka
+      POSTGRES_DB: eka
+    # Host port 5433 -> container port 5432, to avoid colliding with any
+    # other Postgres already running on the host (e.g. Homebrew/Anaconda).
+    # Inside the Docker network, the api still reaches the db at db:5432.
+    ports:
+      - "5433:5432"
+    volumes:
+      - eka_db_data:/var/lib/postgresql/data
+      - ./scripts/db/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U eka -d eka"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  minio:
+    # S3-compatible object store for local dev. Swap for real AWS S3 in
+    # production by setting S3_ENDPOINT_URL="" (and clearing the keys —
+    # boto3 falls back to the AWS credential chain).
+    image: minio/minio:latest
+    container_name: eka-minio
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    ports:
+      - "9000:9000"   # S3 API
+      - "9001:9001"   # MinIO web console
+    volumes:
+      - eka_minio_data:/data
+    command: server /data --console-address ":9001"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: eka-api
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://eka:eka@db:5432/eka
+      S3_ENDPOINT_URL: http://minio:9000
+      S3_ACCESS_KEY: minioadmin
+      S3_SECRET_KEY: minioadmin
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/scripts:/app/scripts
+      - ./backend/tests:/app/tests
+      - ./backend/alembic:/app/alembic
+      - ./backend/alembic.ini:/app/alembic.ini
+      # Mounted so `make eval` / `make eval-seed` can read questions and docs
+      # without rebuilding the image.
+      - ./evals:/app/evals
+      - ./sample_docs:/app/sample_docs
+      # Cache the fastembed ONNX model + tokenizer between container restarts.
+      # Without this, every restart would re-download ~1.3GB.
+      - eka_fastembed_cache:/root/.cache/fastembed
+    depends_on:
+      db:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
+    command: ["uv", "run", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: eka-frontend
+    environment:
+      VITE_API_URL: http://api:8000
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/index.html:/app/index.html
+      - ./frontend/vite.config.ts:/app/vite.config.ts
+      - ./frontend/tailwind.config.js:/app/tailwind.config.js
+      - ./frontend/postcss.config.js:/app/postcss.config.js
+    depends_on:
+      - api
+
+volumes:
+  eka_db_data:
+  eka_minio_data:
+  eka_fastembed_cache:
