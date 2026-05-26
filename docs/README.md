@@ -9,5 +9,4 @@
 | [cost.md](cost.md)                      | Itemized cost model at three usage levels            |
 | [evaluation.md](evaluation.md)          | Eval methodology, baseline results, tuning experiment |
 | [api.md](api.md)                        | HTTP API reference                                   |
-| [diagrams/](diagrams/)                  | Mermaid sources for the four diagrams                |
-| [images/](images/)                      | Rendered PNGs referenced from README and docs        |
+| [images/](images/)                      | Architecture and flow diagrams                       |
